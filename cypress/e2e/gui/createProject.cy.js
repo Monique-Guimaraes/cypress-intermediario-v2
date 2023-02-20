@@ -1,7 +1,10 @@
 import { faker } from '@faker-js/faker' // biblioteca faker gera dados aleatórios
 
-describe('Create Project', () => {
+const options = { env: { snapshotOnly: true } }
+
+describe('Create Project', options, () => {
     beforeEach(() => {
+        cy.api_deleteProjects()
         cy.login()
     })
 
